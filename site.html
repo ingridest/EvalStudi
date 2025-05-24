@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop&Art - Artisanat Pop Culture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"> <!-- Importation de la police Roboto -->
+    <style>
+        body {
+            font-family: 'Roboto', black;
+            margin: 0;
+            padding: 0;
+            background-color:#f4efeb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background:linear-gradient(#5cbea0, #e92b8b);
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 50;
+            margin: 10px 0 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+			 text-decoration: none;
+            font-weight: thin;
+            transition: color 1.0s;
+        }
+
+        nav ul li a:hover {
+		 text-decoration: underline;
+            color: #5cbea0;
+        }
+
+        /* Showcase */
+        .showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .showcase-item {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+         .showcase-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 5px solid #f2bd0f;
+        }
+
+        .showcase-item h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            padding: 0 10px;
+            color: #e92b8b;
+        }
+
+        .showcase-item p {
+            padding: 0 10px 10px;
+        }
+
+        /* Je commande mon prochain article */
+        .order-form {
+            background: white;
+            border-radius: 10px;
+            padding: 50px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-form h2 {
+            margin-bottom: 20px;
+            color: #f2bd0f;
+        }
+
+        .order-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .order-form input,
+        .order-form select,
+        .order-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .order-form button {
+            background-color: #5cbea0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .order-form button:hover {
+            background-color: #4aa68d;
+        }
+
+        /* Section "Où nous trouver" */
+        .location {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .location h2 {
+            color: #e92b8b;
+            margin-bottom: 20px;
+        }
+
+        /* FAQ */
+        .faq {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq h2 {
+            color: #e92b8b;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-item h3 {
+            cursor: pointer;
+            color: #5cbea0;
+            transition: color 0.3s;
+        }
+
+        .faq-item h3:hover {
+            color: #e92b8b;
+        }
+
+        .faq-item p {
+            display: none;
+            padding: 10px 0;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .social-media a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .showcase-item {
+            animation: fadeIn 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Pop&Art</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Les tableaux</a></li>
+                <li><a href="#">Les objets artisanaux</a></li>
+                <li><a href="#">Les impressions 3D</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="showcase">
+        <article class="showcase-item">
+            <img src="https://static.hitek.fr/img/actualite/2017/04/18/w_image-1-totoro.webp" alt="Tableau inspiré de la pop culture">
+            <h2>Les tableaux</h2>
+            <p>Prochainement</p>
+        </article>
+        <article class="showcase-item">
+            <img src="https://www.madcityzen.fr/medias/upload/images/animations/pop-sculpture/chien-snoopy-pop-art-3d-atelier-team-building.webp" alt="Objet en bois de la pop culture">
+            <h2>Les objets artisanaux</h2>
+            <p>Prochainement</p>
+        </article>
+        <article class="showcase-item">
+            <img src="https://cdn.xsd.cz/original/6d589212a1133739aea48f2475b7b182.jpg" alt="Objet imprimé en 3D de la pop culture">
+            <h2>Les impressions 3D</h2>
+            <p>Prochainement</p>
+        </article>
+    </section>
+
+    <!-- Formulaire de commande -->
+    <section>
+        <div class="order-form">
+            <h2>Je commande mon prochain article</h2>
+            <form action="#" method="POST">
+                <label for="name">NOM Prénom :</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="adresse">Adresse postale:</label>
+                <input type="adresse" id="adresse" name="adresse" required>
+				
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="product">Choisissez un Article :</label>
+                <select id="product" name="product" required>
+                    <option value="">Sélectionnez la catégorie</option>
+                    <option value="tableau">Tableaux</option>
+                    <option value="bois">Objets artisanaux</option>
+                    <option value="3dprint">Impressions 3D</option>
+                </select>
+
+                <label for="quantity">Quantité :</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+                <label for="message">Message (facultatif) :</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+
+                <button type="submit">Commander</button>
+    </article>
+    </section>
+ <!-- Section "Où nous trouver" -->
+    <section>
+        <div class="location">
+            <h2>Où nous trouver</h2>
+            <p>Nous avons une boutique située à Lyon.</p>
+            <p>Venez découvrir nos objets de collection artisanaux !</p>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section>
+        <div class="faq">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Quels types d'articles proposez-vous ?</h3>
+                <p>Nous proposons des tableaux, des objets en bois et des impressions 3D inspirés de la culture pop.</p>
+            </div>
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Comment puis-je passer commande ?</h3>
+                <p>Vous pouvez passer commande via notre formulaire de commande disponible sur le site.</p>
+            </div>
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Offrez-vous la livraison ?</h3>
+                <p>Oui, nous offrons des options de livraison à domicile pour toutes nos commandes.</p>
+            </div>
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Où est située votre boutique ?</h3>
+                <p>Notre boutique est située à Lyon. Les détails de l'adresse peuvent être fournis sur demande.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Pop&Art. Tous droits réservés.</p>
+        <div class="social-media">
+            <a href="#">Sur l'app</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
+
+
+        }
+    </script>
+</body>
+
+</html>
