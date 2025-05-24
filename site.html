@@ -1,338 +1,429 @@
-
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pop&Art - Artisanat Pop Culture</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"> <!-- Importation de la police Roboto -->
-    <style>
-        body {
-            font-family: 'Roboto', black;
-            margin: 0;
-            padding: 0;
-            background-color:#f4efeb;
-            color: #333;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Endurance Extrême - Titan X-Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Header */
-        .header {
-            background:linear-gradient(#5cbea0, #e92b8b);
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-        }
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+      line-height: 1.6;
+      color: #171717;
+      background: #fff;
+    }
 
-        .header h1 {
-            font-size: 2.5em;
-            margin: 10;
-        }
+    header {
+      background: #white;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
 
-        nav ul {
-            list-style: none;
-            padding: 50;
-            margin: 10px 0 0;
-            display: flex;
-            justify-content: center;
-        }
+    .mountain-logo {
+      width: 500px;
+      height: 500px;
+      margin: 0 auto 1rem;
+      filter: invert(1);
+    }
 
-        nav ul li {
-            margin: 0 15px;
-        }
+    header h1 {
+      font-size: 2.5rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
 
-        nav ul li a {
-            color: #ffffff;
-			 text-decoration: none;
-            font-weight: thin;
-            transition: color 1.0s;
-        }
+    .title-endurance {
+      color: #ff7410;
+    }
 
-        nav ul li a:hover {
-		 text-decoration: underline;
-            color: #5cbea0;
-        }
+    .title-extreme {
+      color: #171717;
+      -webkit-text-stroke: 1px #ff7410;
+    }
 
-        /* Showcase */
-        .showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
+    .subtitle {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+      font-size: 1rem;
+      color: white;
+      background: #171717;
+      padding: 0.5rem 1.5rem;
+      transform: skew(-15deg);
+      display: inline-block;
+      border: 2px solid #171717;
+      letter-spacing: 3px;
+    }
 
-        .showcase-item {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    nav {
+      background: #662e08;
+      padding: 1rem;
+      text-align: center;
+    }
 
-        .showcase-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+    }
 
-         .showcase-item img {
-            width: 100%;
-            height: auto;
-            border-bottom: 5px solid #f2bd0f;
-        }
+    nav a:hover {
+      background: #ff7410;
+    }
 
-        .showcase-item h2 {
-            font-size: 1.5em;
-            margin: 10px 0;
-            padding: 0 10px;
-            color: #e92b8b;
-        }
+    .hero {
+      background: linear-gradient(rgba(23, 23, 23, 0.3), rgba(23, 23, 23, 0.3)), 
+                  url('https://product-cdn-frz.alltricks.com/large/215/577215/2577215/5198765') center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      padding: 0 4rem;
+      position: relative;
+    }
 
-        .showcase-item p {
-            padding: 0 10px 10px;
-        }
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+    }
 
-        /* Je commande mon prochain article */
-        .order-form {
-            background: white;
-            border-radius: 10px;
-            padding: 50px;
-            max-width: 600px;
-            margin: 40px auto;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
+    .bike-showcase {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .order-form h2 {
-            margin-bottom: 20px;
-            color: #f2bd0f;
-        }
+    .bike-showcase img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    }
 
-        .order-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      text-align: left;
+    }
 
-        .order-form input,
-        .order-form select,
-        .order-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+      text-align: left;
+    }
 
-        .order-form button {
-            background-color: #5cbea0;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
+    .cta {
+      background: #ff7410;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-        .order-form button:hover {
-            background-color: #4aa68d;
-        }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 116, 16, 0.3);
+    }
 
-        /* Section "Où nous trouver" */
-        .location {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 40px auto;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+    .content {
+      padding: 4rem 2rem;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 3rem;
+      align-items: center;
+    }
 
-        .location h2 {
-            color: #e92b8b;
-            margin-bottom: 20px;
-        }
+    .content-text {
+      text-align: left;
+    }
 
-        /* FAQ */
-        .faq {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 40px auto;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
 
-        .faq h2 {
-            color: #e92b8b;
-            margin-bottom: 20px;
-        }
+    .carousel {
+      display: flex;
+      width: 200%;
+      height: 100%;
+      animation: slide 6s infinite;
+    }
 
-        .faq-item {
-            margin-bottom: 15px;
-        }
+    .carousel img {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        .faq-item h3 {
-            cursor: pointer;
-            color: #5cbea0;
-            transition: color 0.3s;
-        }
+    @keyframes slide {
+      0%, 45% { transform: translateX(0); }
+      55%, 95% { transform: translateX(-50%); }
+    }
 
-        .faq-item h3:hover {
-            color: #e92b8b;
-        }
+    .content h2 {
+      font-size: 2.2rem;
+      color: #171717;
+      margin-bottom: 1.5rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+    }
 
-        .faq-item p {
-            display: none;
-            padding: 10px 0;
-            background: #f9f9f9;
-            border-radius: 5px;
-        }
+    .content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #555;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+    }
 
-        /* Footer */
-        .footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            width: 100%;
-        }
+    .testimonial {
+      background: #f8f8f8;
+      padding: 3rem 2rem;
+      margin: 3rem 2rem;
+      border-left: 4px solid #ff7410;
+      font-style: italic;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        .social-media a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
+    .testimonial p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #171717;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+    }
 
-        /* Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .testimonial .author {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      color: #662e08;
+      text-align: right;
+    }
 
-        .showcase-item {
-            animation: fadeIn 0.5s;
-        }
-    </style>
+    .newsletter {
+      background: #662e08;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .newsletter h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+    }
+
+    .newsletter form {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .newsletter input {
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: 4px;
+      width: 180px;
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+    }
+
+    .newsletter button {
+      padding: 0.8rem 1.5rem;
+      background: #ff7410;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .newsletter button:hover {
+      background: #e6670e;
+    }
+
+    footer {
+      background: #171717;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      footer {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+      }
+      
+      .content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+      
+      .content-text {
+        text-align: center;
+      }
+      
+      .carousel-container {
+        height: 200px;
+      }
+      
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+        text-align: center;
+      }
+      
+      .bike-showcase img {
+        max-width: 300px;
+      }
+      
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+      
+      .newsletter form {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .newsletter input {
+        width: 250px;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <header class="header">
-        <h1>Pop&Art</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Les tableaux</a></li>
-                <li><a href="#">Les objets artisanaux</a></li>
-                <li><a href="#">Les impressions 3D</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+     <img src="mountain.png" alt="Mountain Bike Logo" class="mountain-logo">
+    <h1>
+      <span class="title-endurance">Endurance</span>
+      <span class="title-extreme">Extrême</span>
+    </h1>
+    <div class="subtitle">MOUNTAIN RIDE</div>
+  </header>
+  
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#produit">Le Titan X-Pro</a>
+    <a href="#produit">Le Blog</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="https://shop.endurance-extreme.com" target="_blank">Boutique</a>
+  </nav>
+  
+  <div class="hero" id="accueil">
+    <div class="hero-content">
+      <h2>Titan X-Pro</h2>
+      <p>Tous le débattement nécessaire pour un vélo équipé d'une fourche simple té, capable d'encaisser les chemins les plus raides et cassants. Après tout, certains prennent le départ d'une Coupe du Monde de descente avec moins de débattement !</p>
+      <button class="cta" onclick="window.open('https://shop.endurance-extreme.com/titan-x-pro', '_blank')">En savoir plus</button>
+    </div>
+    <div class="bike-showcase">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDQwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImJpa2VHcmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZjc0MTAiLz4KPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiM2NjJlMDgiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMTcxNzE3Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPCEtLSBGcmFtZSAtLT4KPGxpbmUgeDE9IjEwMCIgeTE9IjE1MCIgeDI9IjE4MCIgeTI9IjEyMCIgc3Ryb2tlPSJ1cmwoI2Jpa2VHcmFkaWVudCkiIHN0cm9rZS13aWR0aD0iNiIvPgo8bGluZSB4MT0iMTAwIiB5MT0iMTUwIiB4Mj0iMTUwIiB5Mj0iMTgwIiBzdHJva2U9InVybCgjYmlrZUdyYWRpZW50KSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxsaW5lIHgxPSIxNTAiIHkxPSIxODAiIHgyPSIyNzAiIHkyPSIxODAiIHN0cm9rZT0idXJsKCNiaWtlR3JhZGllbnQpIiBzdHJva2Utd2lkdGg9IjYiLz4KPGxpbmUgeDE9IjI3MCIgeTE9IjE4MCIgeDI9IjMwMCIgeTI9IjE1MCIgc3Ryb2tlPSJ1cmwoI2Jpa2VHcmFkaWVudCkiIHN0cm9rZS13aWR0aD0iNiIvPgo8bGluZSB4MT0iMzAwIiB5MT0iMTUwIiB4Mj0iMTgwIiB5Mj0iMTIwIiBzdHJva2U9InVybCgjYmlrZUdyYWRpZW50KSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjwhLS0gRm9yayAtLT4KPGxpbmUgeDE9IjEwMCIgeTE9IjE1MCIgeDI9IjkwIiB5Mj0iODAiIHN0cm9rZT0idXJsKCNiaWtlR3JhZGllbnQpIiBzdHJva2Utd2lkdGg9IjQiLz4KPGxpbmUgeDE9IjkwIiB5MT0iODAiIHgyPSI4MCIgeTI9IjE3NSIgc3Ryb2tlPSJ1cmwoI2Jpa2VHcmFkaWVudCkiIHN0cm9rZS13aWR0aD0iNCIvPgo8IS0tIEhhbmRsZWJhciAtLT4KPGxpbmUgeDE9Ijc1IiB5MT0iODAiIHgyPSIxMDUiIHkyPSI4MCIgc3Ryb2tlPSIjZmY3NDEwIiBzdHJva2Utd2lkdGg9IjMiLz4KPCEtLSBTZWF0IC0tPgo8ZWxsaXBzZSBjeD0iMTgwIiBjeT0iMTIwIiByeD0iMjAiIHJ5PSI4IiBmaWxsPSIjMTcxNzE3Ii8+CjwhLS0gUGVkYWxzIC0tPgo8Y2lyY2xlIGN4PSIxNTAiIGN5PSIxODAiIHI9IjgiIGZpbGw9IiNmZjc0MTAiLz4KPCEtLSBXaGVlbHMgLS0+CjxjaXJjbGUgY3g9IjgwIiBjeT0iMTkwIiByPSI0NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTcxNzE3IiBzdHJva2Utd2lkdGg9IjgiLz4KPGNpcmNsZSBjeD0iODAiIGN5PSIxOTAiIHI9IjMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZjc0MTAiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSIzMDAiIGN5PSIxOTAiIHI9IjQ1IiBmaWxsPSJub25lIiBzdHJva2U9IiMxNzE3MTciIHN0cm9rZS13aWR0aD0iOCIvPgo8Y2lyY2xlIGN4PSIzMDAiIGN5PSIxOTAiIHI9IjMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZjc0MTAiIHN0cm9rZS13aWR0aD0iMiIvPgo8IS0tIENoYWluIC0tPgo8cGF0aCBkPSJNMTQyIDE3Mkg3MyAxOTBMMTU4IDE5NloiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY2MmUwOCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjwvZz4KPC9zdmc+" alt="VTT Titan X-Pro">
+    </div>
+  </div>
+  
+  <div class="content" id="produit">
+    <div class="content-text">
+      <h2>Le VTT de descente ultime</h2>
+      <p>Charger le van, prendre la route, grimper au sommet d'une montagne, envoyer à la descente, valider un nouveau gap, jeter le vélo dans le van, repartir jusqu'au bike park et continuer d'enchainer les runs. Un programme bien rodé qui peut aussi être associer aux courses les plus cinglées. Le Titan X-Pro a pour marque de fabrique d'être toujours prêt, peu importe ce que vous lui infligez. Le seul détail à ajouter est un pilote bien décidé à en exploiter toutes les capacités. 
+        Fiabilité et sérénité pour toute la famille. Fabriqué dans les Alpes françaises, le Titan X-Pro vous offre la tranquillité d'esprit que vous cherchez.</p>
+      <button class="cta" onclick="window.open('https://shop.endurance-extreme.com/titan-x-pro', '_blank')">Voir les spécifications</button>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="https://images.pexels.com/photos/3642537/pexels-photo-3642537.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Deux cyclistes VTT">
+        <img src="https://images.pexels.com/photos/163491/bike-mountain-mountain-biking-trail-163491.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cycliste en montagne">
+      </div>
+    </div>
+  </div>
+  
+  <div class="testimonial">
+    <p>"En tant que moniteur, j'ai besoin de matos fiable. Le Titan X-Pro tient ses promesses : zéro casse en 8 mois d'utilisation intensive. Mes clients adorent et ma communauté sur les réseaux sociaux aussi !"</p>
+    <div class="author">– Bastien, Moniteur VTT</div>
+    </p>
+  </p>
+    </p>
+  </p>
 
-    <section class="showcase">
-        <article class="showcase-item">
-            <img src="https://static.hitek.fr/img/actualite/2017/04/18/w_image-1-totoro.webp" alt="Tableau inspiré de la pop culture">
-            <h2>Les tableaux</h2>
-            <p>Prochainement</p>
-        </article>
-        <article class="showcase-item">
-            <img src="https://www.madcityzen.fr/medias/upload/images/animations/pop-sculpture/chien-snoopy-pop-art-3d-atelier-team-building.webp" alt="Objet en bois de la pop culture">
-            <h2>Les objets artisanaux</h2>
-            <p>Prochainement</p>
-        </article>
-        <article class="showcase-item">
-            <img src="https://cdn.xsd.cz/original/6d589212a1133739aea48f2475b7b182.jpg" alt="Objet imprimé en 3D de la pop culture">
-            <h2>Les impressions 3D</h2>
-            <p>Prochainement</p>
-        </article>
-    </section>
+    <p>"Nous avons acheté deux Titan X-Pro l'année dernière. Aucun souci malgré nos sorties hebdomadaires avec les enfants ! La qualité française sans se ruiner, exactement ce que nous cherchions."</p>
+    <div class="author">– Lucie et Simon, parents de deux enfants à Grenoble</div>
+  </div>
+  
+  <div class="newsletter" id="newsletter">
+    <h3>Restez informé des nouveautés</h3>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Prénom" name="prenom" required />
+      <input type="text" placeholder="Nom" name="nom" required />
+      <input type="email" placeholder="E-mail" name="email" required />
+      <button type="submit">Je m'inscris à la Newsletter</button>
+    </form>
+  </div>
+  
+  <footer>
+    <p>© 2025 Endurance Extrême - Suivez-nous sur les réseaux sociaux</p>
+  </footer>
 
-    <!-- Formulaire de commande -->
-    <section>
-        <div class="order-form">
-            <h2>Je commande mon prochain article</h2>
-            <form action="#" method="POST" data-netlify="true">
-                <label for="name">NOM Prénom :</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="adresse">Adresse postale:</label>
-                <input type="adresse" id="adresse" name="adresse" required>
-				
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="product">Choisissez un Article :</label>
-                <select id="product" name="product" required>
-                    <option value="">Sélectionnez la catégorie</option>
-                    <option value="tableau">Tableaux</option>
-                    <option value="bois">Objets artisanaux</option>
-                    <option value="3dprint">Impressions 3D</option>
-                </select>
-
-                <label for="quantity">Quantité :</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
-
-                <label for="message">Message (facultatif) :</label>
-                <textarea id="message" name="message" rows="5"></textarea>
-
-                <button type="submit">Commander</button>
-    </article>
-    </section>
- <!-- Section "Où nous trouver" -->
-    <section>
-        <div class="location">
-            <h2>Où nous trouver</h2>
-            <p>Nous avons une boutique située à Lyon.</p>
-            <p>Venez découvrir nos objets de collection artisanaux !</p>
-        </div>
-    </section>
-
-    <!-- Section FAQ -->
-    <section>
-        <div class="faq">
-            <h2>FAQ</h2>
-            <div class="faq-item">
-                <h3 onclick="toggleFAQ(this)">Quels types d'articles proposez-vous ?</h3>
-                <p>Nous proposons des tableaux, des objets en bois et des impressions 3D inspirés de la culture pop.</p>
-            </div>
-            <div class="faq-item">
-                <h3 onclick="toggleFAQ(this)">Comment puis-je passer commande ?</h3>
-                <p>Vous pouvez passer commande via notre formulaire de commande disponible sur le site.</p>
-            </div>
-            <div class="faq-item">
-                <h3 onclick="toggleFAQ(this)">Offrez-vous la livraison ?</h3>
-                <p>Oui, nous offrons des options de livraison à domicile pour toutes nos commandes.</p>
-            </div>
-            <div class="faq-item">
-                <h3 onclick="toggleFAQ(this)">Où est située votre boutique ?</h3>
-                <p>Notre boutique est située à Lyon. Les détails de l'adresse peuvent être fournis sur demande.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>© 2024 Pop&Art. Tous droits réservés.</p>
-        <div class="social-media">
-            <a href="#">Sur l'app</a>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-        </div>
-    </footer>
-
-
-        }
-    </script>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert('Merci pour votre inscription !');
+    }
+  </script>
 </body>
-
 </html>
