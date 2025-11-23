@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Endurance Extrême - Titan X-Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+      line-height: 1.6;
+      color: #171717;
+      background: #fff;
+    
+
+    header {
+      background: #white;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .mountain-logo {
+      width:80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+      filter: invert(1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .title-endurance {
+      color: #ff7410;
+    }
+
+    .title-extreme {
+      color: #171717;
+      -webkit-text-stroke: 1px #ff7410;
+    }
+
+    .subtitle {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+      font-size: 1rem;
+      color: white;
+      background: #171717;
+      padding: 0.5rem 1.5rem;
+      transform: skew(-15deg);
+      display: inline-block;
+      border: 2px solid #171717;
+      letter-spacing: 3px;
+    }
+
+    nav {
+      background: #662e08;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+    }
+
+    nav a:hover {
+      background: #ff7410;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(23, 23, 23, 0.3), rgba(23, 23, 23, 0.3)), 
+                  url('https://product-cdn-frz.alltricks.com/large/215/577215/2577215/5198765') center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      padding: 0 4rem;
+      position: relative;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .bike-showcase {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bike-showcase img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      text-align: left;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+      text-align: left;
+    }
+
+    .cta {
+      background: #ff7410;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 116, 16, 0.3);
+    }
+
+    .content {
+      padding: 4rem 2rem;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .content-text {
+      text-align: left;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .carousel {
+      display: flex;
+      width: 200%;
+      height: 100%;
+      animation: slide 6s infinite;
+    }
+
+    .carousel img {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%, 45% { transform: translateX(0); }
+      55%, 95% { transform: translateX(-50%); }
+    }
+
+    .content h2 {
+      font-size: 2.2rem;
+      color: #171717;
+      margin-bottom: 1.5rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #555;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+    }
+
+    .testimonial {
+      background: #f8f8f8;
+      padding: 3rem 2rem;
+      margin: 3rem 2rem;
+      border-left: 4px solid #ff7410;
+      font-style: italic;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .testimonial p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #171717;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+    }
+
+    .testimonial .author {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      color: #662e08;
+      text-align: right;
+    }
+
+    .newsletter {
+      background: #662e08;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .newsletter h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+    }
+
+    .newsletter form {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .newsletter input {
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: 4px;
+      width: 180px;
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+    }
+
+    .newsletter button {
+      padding: 0.8rem 1.5rem;
+      background: #ff7410;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .newsletter button:hover {
+      background: #e6670e;
+    }
+
+    footer {
+      background: #171717;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      footer {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+      }
+      
+      .content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+      
+      .content-text {
+        text-align: center;
+      }
+      
+      .carousel-container {
+        height: 200px;
+      }
+      
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+        text-align: center;
+      }
+      
+      .bike-showcase img {
+        max-width: 300px;
+      }
+      
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+      
+      .newsletter form {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .newsletter input {
+        width: 250px;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+     <img src="mountain.png" alt="Mountain Bike Logo" class="mountain-logo">
+    <h1>
+      <span class="title-endurance">Endurance</span>
+      <span class="title-extreme">Extrême</span>
+    </h1>
+    <div class="subtitle">MOUNTAIN RIDE</div>
+  </header>
+  
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#produit">Le Titan X-Pro</a>
+    <a href="#produit">Le Blog</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="https://shop.endurance-extreme.com" target="_blank">Boutique</a>
+  </nav>
+  
+  <div class="hero" id="accueil">
+    <div class="hero-content">
+      <h2>Titan X-Pro</h2>
+      <p>Tout le débattement nécessaire pour un vélo équipé d’une fourche simple, capable d’encaisser les chemins les plus raides et les plus cassants. Après tout, certains prennent le départ d’une Coupe du monde de descente avec encore moins de débattement !</p>
+      <button class="cta" onclick="window.open('https://shop.endurance-extreme.com/titan-x-pro', '_blank')">En savoir plus</button>
+    </div>
+  </div>
+  
+  <div class="content" id="produit">
+    <div class="content-text">
+      <h2>Le VTT de descente ultime</h2>
+      <p>Charger le van, prendre la route, grimper au sommet d'une montagne, envoyer à la descente, valider un nouveau gap, jeter le vélo dans le van, repartir jusqu'au bike park et continuer d'enchainer les runs. Un programme bien rodé qui peut aussi être associer aux courses les plus cinglées. Le Titan X-Pro a pour marque de fabrique d'être toujours prêt, peu importe ce que vous lui infligez. Le seul détail à ajouter est un pilote bien décidé à en exploiter toutes les capacités. 
+        Fiabilité et sérénité pour toute la famille. Fabriqué dans les Alpes françaises, le Titan X-Pro vous offre la tranquillité d'esprit que vous cherchez.</p>
+      <button class="cta" onclick="window.open('https://shop.endurance-extreme.com/titan-x-pro', '_blank')">Voir les spécifications</button>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="https://images.pexels.com/photos/3642537/pexels-photo-3642537.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Deux cyclistes VTT">
+        <img src="https://images.pexels.com/photos/163491/bike-mountain-mountain-biking-trail-163491.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cycliste en montagne">
+      </div>
+    </div>
+  </div>
+  
+  <div class="testimonial">
+    <p>"En tant que moniteur, j'ai besoin de matos fiable. Le Titan X-Pro tient ses promesses : zéro casse en 8 mois d'utilisation intensive. Mes clients adorent et ma communauté sur les réseaux sociaux aussi !"</p>
+    <div class="author">– Bastien, Moniteur VTT</div>
+    </p>
+  </p>
+    </p>
+  </p>
+
+    <p>"Nous avons acheté deux Titan X-Pro l'année dernière. Aucun souci malgré nos sorties hebdomadaires avec les enfants ! La qualité française sans se ruiner, exactement ce que nous cherchions."</p>
+    <div class="author">– Lucie et Simon, parents de deux enfants à Grenoble</div>
+  </div>
+  
+  <div class="newsletter" id="newsletter">
+    <h3>Restez informé des nouveautés</h3>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Prénom" name="prenom" required />
+      <input type="text" placeholder="Nom" name="nom" required />
+      <input type="email" placeholder="E-mail" name="email" required />
+      <button type="submit">Je m'inscris à la Newsletter</button>
+    </form>
+  </div>
+  
+  <footer>
+    <p>© 2025 Endurance Extrême - Suivez-nous sur les réseaux sociaux</p>
+  </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert('Merci pour votre inscription !');
+    }
+  </script>
+</body>
+</html>
